@@ -4,11 +4,11 @@ import {
     Column,
     Entity} from "typeorm";
     
-@Entity('user')
-export class RoleEntity {
+@Entity('menu')
+export class MenuEntity {
 @PrimaryGeneratedColumn()
-id_role:number ;
+id_menu:number ;
 @Column({type: 'varchar',length: 50 ,nullable:false})
-name_role: string;
+name_menu: string;
 
 }

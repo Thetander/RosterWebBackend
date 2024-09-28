@@ -9,9 +9,11 @@ export class MenuRoleEntity {
     
 @PrimaryGeneratedColumn()
 id_menu_role:number ;
-@Column({type: 'int',length: 50 ,nullable:false})
+
+@Column({type: 'int',nullable:false})
 id_role: number;
-@Column({type: 'int',length: 50 ,nullable:false})
+
+@Column({type: 'int',nullable:false})
 id_menu: number;
 
 }

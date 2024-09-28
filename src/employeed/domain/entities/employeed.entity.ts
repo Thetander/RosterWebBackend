@@ -1,3 +1,4 @@
+import { hash } from "bcryptjs";
 import {
     PrimaryGeneratedColumn,
     Column, CreateDateColumn,
