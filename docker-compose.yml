@@ -3,11 +3,11 @@ services:
   database:
     image: postgres:14.1-alpine
     restart: always
-    container_name: reporteadorPatrones
+    container_name: rosterWEB
     environment:
       POSTGRES_USER: tander
-      POSTGRES_PASSWORD: reporteador
-      POSTGRES_DB: reporteadorDB
+      POSTGRES_PASSWORD: roster
+      POSTGRES_DB: rosterDB
     volumes:
       - ./postgrest:/var/lib/postgresql/data
     ports:
