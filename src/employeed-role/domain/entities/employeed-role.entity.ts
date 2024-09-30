@@ -4,7 +4,7 @@ import {
     Entity} from "typeorm";
 
     @Entity('employeed_role')
-export class UserEntity {
+export class EmployeedRoleEntity {
 
     @PrimaryGeneratedColumn()
     id_user_role: number;

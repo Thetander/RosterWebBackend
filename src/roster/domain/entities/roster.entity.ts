@@ -3,7 +3,7 @@ import {
     Column,
     Entity,
     Collection} from "typeorm";
-    @Entity('Roster')
+    @Entity('roster')
 export class RosterEntity {
     @PrimaryGeneratedColumn()
     id_roster:number;

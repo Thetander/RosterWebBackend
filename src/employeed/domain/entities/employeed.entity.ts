@@ -6,14 +6,20 @@ import {
 } from "typeorm";
 
 @Entity('employeed')
-export class EmployeedEntity {
+export class EmployeedEntity{
 
     @PrimaryGeneratedColumn()
     id_employeed: number;
+
     @Column({ type: 'varchar', length: 255 })
     name: string;
+
+    @Column({ type: 'varchar', length: 255, nullable: false })
+
+    last_name: string;
     @Column({ type: 'varchar', length: 255, nullable: false })
     email: string;
+    
     @Column({ type: 'varchar', length: 255, nullable: false })
     password: string;
 

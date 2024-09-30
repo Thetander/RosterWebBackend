@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import {ConfigModule, ConfigService} from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppService } from './app.service';
 import { RosterModule } from './roster/aplications/modules/roster.module';
 import { RosterController } from './roster/infrastructure/controllers/roster.controller';
@@ -15,42 +15,48 @@ import { PermissionsMenuModule } from './permission-menu/aplications/modules/per
 import { EmployeedRoleModule } from './employeed-role/aplications/modules/employeed-role.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DATABASE_HOST, DATABASE_NAME, DATABASE_PASSWORD, DATABASE_PORT, DATABASE_USERNAME } from './config/constants';
-import { MenuModule } from './menu/aplications/modules/menu.module';
+import { EmployeedEntity } from 'src/employeed/domain/entities/employeed.entity';
+
 
 
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
-      inject:[ConfigService],
-      useFactory:(config: ConfigService)=>({
-      // configurar 
-      type: 'postgres',
-      host: config.get<string>(DATABASE_HOST),
-      port: parseInt(config.get<string>(DATABASE_PORT),10),
-      username: config.get<string>(DATABASE_USERNAME),
-      password: config.get<string>(DATABASE_PASSWORD),
-      database: config.get<string>(DATABASE_NAME),
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        // configurar 
+        type: 'postgres',
+        host: config.get<string>(DATABASE_HOST),
+        port: parseInt(config.get<string>(DATABASE_PORT), 10),
+        username: config.get<string>(DATABASE_USERNAME),
+        password: config.get<string>(DATABASE_PASSWORD),
+        database: config.get<string>(DATABASE_NAME),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: true, 
+        synchronize: true,
         ssl: process.env.POSTGRES_SSL === "true",
         extra: {
           ssl:
             process.env.POSTGRES_SSL === "true"
               ? {
-                  rejectUnauthorized: false,
-                }
+                rejectUnauthorized: false,
+              }
               : null,
-        }, 
-       })
-      }), 
-    ConfigModule.forRoot({
-     isGlobal: true,
-     envFilePath: '.env'
+        },
+      })
     }),
-    
-    
-    EmployeedModule, RosterModule, RoleModule, EmployeedModule, PermissionsModule, MenuRoleModule, PermissionsMenuModule, EmployeedRoleModule, MenuModule],
-  controllers: [AppController, EmployeedController, RosterController ],
-  providers: [AppService, EmployeedService, RosterService, EmployeedService, ],
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env'
+    }),
+    EmployeedModule, 
+    RosterModule, 
+    RoleModule, 
+    PermissionsModule, 
+    MenuRoleModule, 
+    PermissionsMenuModule, 
+    EmployeedRoleModule],
+
+  controllers: [AppController],
+  providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
