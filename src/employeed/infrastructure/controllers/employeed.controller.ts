@@ -1,6 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+        import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { identity } from 'rxjs';
 import { CreateEmployeedDto } from 'src/employeed/aplications/dto/create-employeed.dto';
 import { EditEmployeedDto } from 'src/employeed/aplications/dto/edit-employeed.dto';
 
@@ -21,13 +20,13 @@ async getMany(){
 }
 @Get(':id_employeed')
 async getOne(
-    @Param('id_employeed')
+    @Param('id_employeed')  
     id_employeed:number,
 ){
     const data = await this.employeedService.getOne(id_employeed)
     return {data}
 }
-
+    
 @Post()
 async createOne(
     @Body() dto:CreateEmployeedDto){
