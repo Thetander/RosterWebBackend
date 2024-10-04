@@ -1,13 +1,13 @@
 import { 
     PrimaryGeneratedColumn,
-    Column,CreateDateColumn,
+    Column,
     Entity} from "typeorm";
 
     @Entity('employeed_role')
 export class EmployeedRoleEntity {
 
     @PrimaryGeneratedColumn()
-    id_user_role: number;
+    id_employeed_role: number;
     @Column({type:'int',nullable:false})
     id_role:number;
     @Column({type:'int', nullable:false})
