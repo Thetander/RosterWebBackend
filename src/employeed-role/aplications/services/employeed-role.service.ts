@@ -20,7 +20,7 @@ export class EmployeedRoleService {
           return role;
     }
     async createOne(dto: CreateEmployeedRoleDto){
-          const newRole = await this.createOne(dto)
+          const newRole = await this.EmployeedRoleEntityRepository.create(dto)
           return await this.EmployeedRoleEntityRepository.save(newRole)
     }
     async editOne(id_employeed_roley: number, dto: EditEmployeedRoleDto){

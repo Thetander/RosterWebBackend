@@ -1,4 +1,4 @@
-import { IsOptional, IsEmail, MaxLength, IsString, MinLength } from "class-validator";
+import { MaxLength, IsString, MinLength } from "class-validator";
 export class CreateRoleDto {
     @IsString()
     @MinLength(5)

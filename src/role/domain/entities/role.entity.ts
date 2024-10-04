@@ -6,9 +6,10 @@ import {
     
 @Entity('role')
 export class RoleEntity {
+
 @PrimaryGeneratedColumn()
 id_role:number;
+
 @Column({type: 'varchar',length: 50 ,nullable:false})
 name_role: string;
-
 }
