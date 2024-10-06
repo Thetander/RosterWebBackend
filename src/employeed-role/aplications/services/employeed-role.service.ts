@@ -26,12 +26,11 @@ export class EmployeedRoleService {
     async editOne(id_employeed_roley: number, dto: EditEmployeedRoleDto){
           const employeedRoleSave = await this.getOne(id_employeed_roley)
           const editedEmployeedRole = Object.assign(employeedRoleSave, dto)
-          const employeedRole = await this.EmployeedRoleEntityRepository.save(editedEmployeedRole)
-          return employeedRole;
+          return this.EmployeedRoleEntityRepository.save(editedEmployeedRole)
+    
     } 
     async deleteOne(id_employeed_role:number){
       const employeedRole = await this.getOne(id_employeed_role)
-      const employeed = await this.EmployeedRoleEntityRepository.remove(employeedRole)
-      return employeed;
+      return await this.EmployeedRoleEntityRepository.remove(employeedRole)
     }
 }

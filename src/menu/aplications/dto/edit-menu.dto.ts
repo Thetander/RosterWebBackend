@@ -1,3 +1,3 @@
 import { PartialType } from "@nestjs/mapped-types";
-import { CreateRoleDto } from "./create-menu.dto";
-export class EditRoleDto extends PartialType(CreateRoleDto) {}
+import { CreateMenuDto } from "./create-menu.dto";
+export class EditMenuDto extends PartialType(CreateMenuDto) {}

@@ -3,19 +3,16 @@ import { AppController } from './app.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppService } from './app.service';
 import { RosterModule } from './roster/aplications/modules/roster.module';
-import { RosterController } from './roster/infrastructure/controllers/roster.controller';
-import { RosterService } from './roster/aplications/services/roster.service';
 import { RoleModule } from './role/aplications/modules/role.module';
 import { EmployeedModule } from './employeed/aplications/modules/employeed.module';
-import { EmployeedController } from './employeed/infrastructure/controllers/employeed.controller';
-import { EmployeedService } from './employeed/aplications/services/employeed.service';
 import { PermissionsModule } from './permissions/aplications/modules/permissions.module';
 import { MenuRoleModule } from './menu-role/aplications/modules/menu-role.module';
 import { PermissionsMenuModule } from './permission-menu/aplications/modules/permissions-menu.module';
 import { EmployeedRoleModule } from './employeed-role/aplications/modules/employeed-role.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DATABASE_HOST, DATABASE_NAME, DATABASE_PASSWORD, DATABASE_PORT, DATABASE_USERNAME } from './config/constants';
-import { EmployeedEntity } from 'src/employeed/domain/entities/employeed.entity';
+
+import { MenuModule } from './menu/aplications/modules/menu.module';
 
 
 
@@ -54,7 +51,8 @@ import { EmployeedEntity } from 'src/employeed/domain/entities/employeed.entity'
     PermissionsModule, 
     MenuRoleModule, 
     PermissionsMenuModule, 
-    EmployeedRoleModule],
+    EmployeedRoleModule,
+  MenuModule],
 
   controllers: [AppController],
   providers: [AppService],

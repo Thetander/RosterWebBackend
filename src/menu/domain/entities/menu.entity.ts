@@ -10,5 +10,4 @@ export class MenuEntity {
 id_menu:number ;
 @Column({type: 'varchar',length: 50 ,nullable:false})
 name_menu: string;
-
 }
