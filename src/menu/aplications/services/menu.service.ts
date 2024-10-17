@@ -16,7 +16,6 @@ export class MenuService {
 
     async getMany(){
         return await this.MenuEntityRepository.find()
-        
     }
     async getOne(id_menu: number){
         const menu = await this.MenuEntityRepository.findOne({where:{id_menu}})
