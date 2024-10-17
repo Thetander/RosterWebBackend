@@ -1,6 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { get } from 'http';
 import { CreateMenuRoleDto } from 'src/menu-role/aplications/dto/create-menu-role.dto';
 import { EditMenuRoleDto } from 'src/menu-role/aplications/dto/edit-menu-role.dto';
 import { MenuRoleService } from 'src/menu-role/aplications/services/menu-role.service';
@@ -10,7 +9,7 @@ import { MenuRoleService } from 'src/menu-role/aplications/services/menu-role.se
 export class MenuRoleController {
     constructor(
         private readonly MenuRoleService: MenuRoleService
-    ){}
+    ){} 
 @Get()
 async getMany(){
     const data = await this.MenuRoleService.getMany()
@@ -19,7 +18,7 @@ async getMany(){
 @Get(':id_menu_role')
 async getOne(
     @Param('id_menu_role')
-    id_menu_role: number
+    id_menu_role: number    
 ){
     const data = await this.MenuRoleService.getOne(id_menu_role)
     return{message:'Selected MenuRole', data }

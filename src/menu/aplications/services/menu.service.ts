@@ -1,6 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { EmployeedEntity } from 'src/employeed/domain/entities/employeed.entity';
 import { MenuEntity } from 'src/menu/domain/entities/menu.entity';
 import { Repository } from 'typeorm';
 import { CreateMenuDto } from '../dto/create-menu.dto';
@@ -24,7 +23,7 @@ export class MenuService {
     }
     async createOne(dto:CreateMenuDto){
         const createMenu = await this.MenuEntityRepository.create(dto)
-        return await this.MenuEntityRepository.save(createMenu)
+        return await this.MenuEntityRepository.save(createMenu)     
     }
     async editOne(id_menu:number , dto:EditMenuDto){
         const menuSave = await this.getOne(id_menu)

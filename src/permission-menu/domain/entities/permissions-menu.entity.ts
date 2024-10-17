@@ -8,7 +8,9 @@ import {
 @Entity('permissions_menu')
 export class PermissionsMenuEntity {
     @PrimaryGeneratedColumn()
+    id_permission_menu: number;
+    @Column({type: 'int',nullable:false})
     id_permission: number;
-    @Column({ type: 'varchar', length: 50, nullable: false })
-    name_permission: string;
+    @Column({type: 'int',nullable:false})
+    id_menu: number;
 }

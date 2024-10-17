@@ -1,3 +1,3 @@
 import { PartialType } from "@nestjs/mapped-types";
-import { CreatePermissionDto } from "./create-permisions-menu.dto";
-export class EditPermissionDto extends PartialType(CreatePermissionDto) {}
+import { CreatePermissionMenuDto } from "./create-permisions-menu.dto";
+export class EditPermissionMenuDto extends PartialType(CreatePermissionMenuDto) {}

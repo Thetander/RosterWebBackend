@@ -1,7 +1,8 @@
-import { IsOptional, IsEmail, MaxLength, IsString, MinLength } from "class-validator";
-export class CreatePermissionDto {
-    @IsString()
-    @MinLength(5)
-    @MaxLength(50)
-    name_permission: string;
+import {  IsInt } from "class-validator";
+export class CreatePermissionMenuDto {
+    @IsInt()
+    id_permission:number;
+    @IsInt()
+    id_menu: number;
+ 
 }
